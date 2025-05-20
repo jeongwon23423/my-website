@@ -1,64 +1,62 @@
-﻿<!DOCTYPE html>
+﻿<
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>3D 카드 이펙트</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeongwon's Website</title>
     <style>
         body {
             margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #111;
-            overflow: hidden;
             font-family: 'Segoe UI', sans-serif;
-        }
-
-        .card {
-            width: 300px;
-            height: 400px;
-            background: linear-gradient(135deg, #1e90ff, #00fa9a);
-            border-radius: 20px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-            transform-style: preserve-3d;
-            transition: transform 0.2s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
-            font-size: 24px;
             text-align: center;
-            perspective: 1000px;
+            padding: 100px 20px;
         }
 
-            .card:hover {
-                cursor: pointer;
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.2em;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 15px 30px;
+            background-color: #ffffff22;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: 0.3s;
+        }
+
+            .button:hover {
+                background-color: white;
+                color: #2a5298;
             }
 
-            .card h1 {
-                transform: translateZ(50px);
-            }
+        footer {
+            margin-top: 100px;
+            font-size: 0.9em;
+            color: #ccc;
+        }
     </style>
 </head>
 <body>
-    <div class="card" id="card">
-        <h1>🔥 개쩌는 카드 🔥</h1>
-    </div>
+    <h1>👋 환영합니다!</h1>
+    <p>여기는 정원의 첫 GitHub 웹사이트입니다.</p>
+    <a href="https://github.com/jeongwon23423" class="button" target="_blank">내 GitHub 보러 가기</a>
 
-    <script>
-    const card = document.getElementById('card');
-
-    document.addEventListener('mousemove', (e) => {
-      let x = (window.innerWidth / 2 - e.clientX) / 25;
-      let y = (window.innerHeight / 2 - e.clientY) / 25;
-
-      card.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
-    });
-
-    document.addEventListener('mouseleave', () => {
-      card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-    });
-    </script>
+    <footer>
+        ⓒ 2025 Jeongwon. All rights reserved.
+    </footer>
 </body>
 </html>
