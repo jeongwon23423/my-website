@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>3D 카드 이펙트</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+      width: 300px;
+      height: 400px;
+      background: linear-gradient(135deg, #1e90ff, #00fa9a);
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+      transform-style: preserve-3d;
+      transition: transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      perspective: 1000px;
+    }
+
+    .card:hover {
+      cursor: pointer;
+    }
+
+    .card h1 {
+      transform: translateZ(50px);
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h1>🔥 개쩌는 카드 🔥</h1>
+  </div>
+
+  <script>
+    const card = document.getElementById('card');
+
+    document.addEventListener('mousemove', (e) => {
+      let x = (window.innerWidth / 2 - e.clientX) / 25;
+      let y = (window.innerHeight / 2 - e.clientY) / 25;
+
+      card.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+    });
+
+    document.addEventListener('mouseleave', () => {
+      card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    });
+  </script>
+</body>
+</html>
